@@ -15,15 +15,15 @@ node ("")
     }
     stage("Code Quality"){
         sh "echo performing code test with sonarqube"
-        //sh "${maven}/bin/mvn sonar:sonar"
+        sh "${maven}/bin/mvn sonar:sonar"
     }
     stage("Backup"){
         sh "echo backing up artifact"
-        //sh "${maven}/bin/mvn deploy"
+        sh "${maven}/bin/mvn deploy"
     }
     stage("DeploytoUAT"){
-       // sh "echo deploy package to app server"
-        //deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://54.158.73.2:8080/')], contextPath: null, war: 'target/*.war'
+       sh "echo deploy package to app server"
+       deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://35.173.177.255:8080/')], contextPath: null, war: 'target/*.war'
     }
     stage("Approval"){
         sh "echo Approval needed"
@@ -33,7 +33,7 @@ node ("")
     }
     stage("DeploytoPROD"){
         sh "echo Deploying to Production Environment"
-        //deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://35.175.246.2:8080/')], contextPath: null, war: 'target/*.war'
+        //deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://35.173.177.255:8080/')], contextPath: null, war: 'target/*.war'
     }
     stage("Email Notification"){
         sh "echo sent email notification to DevOps team."
