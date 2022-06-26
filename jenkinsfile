@@ -1,4 +1,4 @@
-node ("")
+node ("jenkins-node1")
 {
     def maven = tool name: "maven3.8.5"
     try {
