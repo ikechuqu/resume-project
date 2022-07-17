@@ -7,7 +7,7 @@ node ("")
     }
     stage("Git Clone"){
         sh "echo start git clone"
-        git branch: "main", credentialsId: "Github-Credentials", url: "https://github.com/ikechuqu/resume-project.git"
+        git branch: "main", credentialsId: "GitHub", url: "https://github.com/ikechuqu/resume-project.git"
     }
     stage("Build"){
         sh "echo build the application with maven"
