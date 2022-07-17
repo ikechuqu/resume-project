@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Resume Snapshot Repository</name>
-	      <url>http://172.31.89.141:8081/repository/resume-snapshot/</url>
+	      <url>http://20.10.185.186:8081/repository/resume-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
