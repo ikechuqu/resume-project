@@ -1,6 +1,6 @@
 node ("")
 {
-    def maven = tool name: "maven3.8.5"
+    def maven = tool name: "Maven3.8.5"
     try {
     stage("Initiation"){
         sh "echo Start of Ice Cream Shop Web app project."
